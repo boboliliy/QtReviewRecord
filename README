@@ -1,0 +1,6 @@
+一、安装插件
+1. 编译工程，生成 libReviewRecord.so
+2. 将 libReviewRecord.so 放到 qt creator 插件目录，如：/usr/lib/x86_64-linux-gnu/qtcreator/plugins/
+二、使用
+3. 打开 qt creator，将光标定位到需要记录的位置（该行代码或者上下文有问题，需要记录）
+4. 在qt creator 工具栏的“工具”菜单项目可以找到子菜单 ReviewRecord ,点击菜单即可弹出内容编辑框,编辑内容确认即可记录到 /home/user/Desktop/ReviewRecord.csv(默认快捷键是 Ctrl+Shift+A)

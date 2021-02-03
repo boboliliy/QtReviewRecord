@@ -77,10 +77,6 @@ ExtensionSystem::IPlugin::ShutdownFlag ReviewRecordPlugin::aboutToShutdown()
 
 void ReviewRecordPlugin::triggerAction()
 {
-//    QMessageBox::information(Core::ICore::mainWindow(),
-//                             tr("Action Triggered"),
-//                             tr("This is an action from ReviewRecord."));
-
     Core::IEditor *iEditor = Core::EditorManager::currentEditor();
     if (iEditor == Q_NULLPTR) {
         qCritical() << "iEditor is nullptr";
@@ -94,16 +90,8 @@ void ReviewRecordPlugin::triggerAction()
     }
 
     bool ok = false;
-//    QInputDialog Dialog;
-//    Dialog.setFixedSize(800, 400);
-//    qInfo() << Dialog.size();
-//    QString content = Dialog.getText(nullptr, tr("code review"),
-//                                            tr("error description:"), QLineEdit::Normal,
-//                                            "", &ok);
-
     QString content = QInputDialog::getMultiLineText(nullptr, tr("code review"),
                                                   tr("error description:"), "", &ok);
-
     if (ok && content.isEmpty())
     {
         qCritical() << "content is empty";
@@ -114,7 +102,6 @@ void ReviewRecordPlugin::triggerAction()
     content.append("\"");
     QString filename = iDocument->displayName();
     QString currentLine = QString::number(iEditor->currentLine());
-//    QString text = "dodfdsf bug";
     QString filepath = iDocument->filePath().toString();
 
     if (filename.isEmpty() || currentLine.isEmpty() || content.isEmpty() || filepath.isEmpty()){
