@@ -1,0 +1,11 @@
+{
+    \"Name\" : \"ReviewRecord\",
+    \"Version\" : \"0.0.1\",
+    \"CompatVersion\" : \"0.0.1\",
+    \"Vendor\" : \"uniontech\",
+    \"Copyright\" : \"(C) uniontech\",
+    \"License\" : \"Put your license information here\",
+    \"Description\" : \"Put a short description of your plugin here\",
+    \"Url\" : \"https://www.uniontech.com/\",
+    $$dependencyList
+}
