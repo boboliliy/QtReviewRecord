@@ -26,7 +26,7 @@ public:
 
 private:
     void triggerAction();
-    QString creatFile(const QString &filePath);
+    QString createFile(const QString &filePath);
     void writeLine(const QString &name, const QString &ine, const QString &content, const QString &Path);
 
 private:

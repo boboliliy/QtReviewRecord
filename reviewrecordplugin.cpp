@@ -92,8 +92,7 @@ void ReviewRecordPlugin::triggerAction()
     bool ok = false;
     QString content = QInputDialog::getMultiLineText(nullptr, tr("code review"),
                                                   tr("error description:"), "", &ok);
-    if (ok && content.isEmpty())
-    {
+    if (ok && content.isEmpty()) {
         qCritical() << "content is empty";
         return;
     }
@@ -111,7 +110,7 @@ void ReviewRecordPlugin::triggerAction()
     writeLine(filename, currentLine, content, filepath);
 }
 
-QString ReviewRecordPlugin::creatFile(const QString &filePath)
+QString ReviewRecordPlugin::createFile(const QString &filePath)
 {
     QFile file(filePath);
     if (file.exists()) {
@@ -135,7 +134,7 @@ QString ReviewRecordPlugin::creatFile(const QString &filePath)
 
 void ReviewRecordPlugin::writeLine(const QString &name, const QString &line, const QString &content, const QString &Path)
 {
-    QString path = creatFile(recordFilePath);
+    QString path = createFile(recordFilePath);
     QFile file(path);
     if (!file.open(QIODevice::ReadWrite | QIODevice::Text)){
         qCritical() << "file open failed,path:" << path;
