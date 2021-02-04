@@ -92,7 +92,7 @@ void ReviewRecordPlugin::triggerAction()
     bool ok = false;
     QString content = QInputDialog::getMultiLineText(nullptr, tr("code review"),
                                                   tr("error description:"), "", &ok);
-    if (ok && content.isEmpty()) {
+    if (!ok || content.isEmpty()) {
         qCritical() << "content is empty";
         return;
     }
